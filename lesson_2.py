@@ -53,13 +53,34 @@
 # average_year = salary_year/12
 # print('Средняя зарплата за год составляет:', average_year)
 
-# Задача 5. Пропавшая карточка
-print('Задача 5.')
-N = int(input('Введите число карточек:'))
-sum = 0
-for card in range (1, N+1):
-    sum += card
-for card in range (N-1):
-    remaining_card = int(input('Номер оставшейся карты:'))
-    sum -= remaining_card
-print('Номер потерявшейся кары:', sum)
+# # Задача 5. Пропавшая карточка
+# print('Задача 5.')
+# N = int(input('Введите число карточек:'))
+# sum = 0
+# for card in range (1, N+1):
+#     sum += card
+# for card in range (N-1):
+#     remaining_card = int(input('Номер оставшейся карты:'))
+#     sum -= remaining_card
+# print('Номер потерявшейся кары:', sum)
+
+# Задча 6*. Рассадить девоек и мальчиков в ряд по очереди (почти)
+print('Задача 6*.')
+boy = int(input('Сколько мальчиков зашло в зал? '))
+girl = int(input('Сколько девочек зашло в зал? '))
+answer = ''
+if (boy > 2 * girl) or (girl > 2 * boy):
+    print('Нет решения')
+elif boy >= girl:
+    k = boy - girl
+    for bgb in range (k):
+        answer += 'BGB'
+    for bg in range (girl - k):
+        answer += 'BG'
+else:
+    k = girl - boy
+    for gbg in range (k):
+        answer += 'GBG'
+    for bg in range (girl - k):
+        answer += 'GB'
+print(answer)
