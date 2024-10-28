@@ -44,11 +44,22 @@
 #         print('Вы угадали. Ура!')
 #         break
 
-# Задача 4. Посчитать средную зарплату 
-print('Задача 4.')
-salary_year = 0
-for month in range(1,13):
-    salary_month = int(input('Введите зарплату за месяц:'))
-    salary_year += salary_month
-average_year = salary_year/12
-print('Средняя зарплата за год составляет:', average_year)
+# # Задача 4. Посчитать средную зарплату 
+# print('Задача 4.')
+# salary_year = 0
+# for month in range(1,13):
+#     salary_month = int(input('Введите зарплату за месяц:'))
+#     salary_year += salary_month
+# average_year = salary_year/12
+# print('Средняя зарплата за год составляет:', average_year)
+
+# Задача 5. Пропавшая карточка
+print('Задача 5.')
+N = int(input('Введите число карточек:'))
+sum = 0
+for card in range (1, N+1):
+    sum += card
+for card in range (N-1):
+    remaining_card = int(input('Номер оставшейся карты:'))
+    sum -= remaining_card
+print('Номер потерявшейся кары:', sum)
