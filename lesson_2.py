@@ -64,23 +64,23 @@
 #     sum -= remaining_card
 # print('Номер потерявшейся кары:', sum)
 
-# Задча 6*. Рассадить девоек и мальчиков в ряд по очереди (почти)
-print('Задача 6*.')
-boy = int(input('Сколько мальчиков зашло в зал? '))
-girl = int(input('Сколько девочек зашло в зал? '))
-answer = ''
-if (boy > 2 * girl) or (girl > 2 * boy):
-    print('Нет решения')
-elif boy >= girl:
-    k = boy - girl
-    for bgb in range (k):
-        answer += 'BGB'
-    for bg in range (girl - k):
-        answer += 'BG'
-else:
-    k = girl - boy
-    for gbg in range (k):
-        answer += 'GBG'
-    for bg in range (girl - k):
-        answer += 'GB'
-print(answer)
+# # Задча 6*. Рассадить девоек и мальчиков в ряд по очереди (почти)
+# print('Задача 6*.')
+# boy = int(input('Сколько мальчиков зашло в зал? '))
+# girl = int(input('Сколько девочек зашло в зал? '))
+# answer = ''
+# if (boy > 2 * girl) or (girl > 2 * boy):
+#     print('Нет решения')
+# elif boy >= girl:
+#     k = boy - girl
+#     for bgb in range (k):
+#         answer += 'BGB'
+#     for bg in range (girl - k):
+#         answer += 'BG'
+# else:
+#     k = girl - boy
+#     for gbg in range (k):
+#         answer += 'GBG'
+#     for bg in range (girl - k):
+#         answer += 'GB'
+# print(answer)
