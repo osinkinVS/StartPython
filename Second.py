@@ -35,16 +35,39 @@
 #         print(f'Error: фильма {movie} у нас нет')
 # print(f'Ваш список любимых фильмов: {my_list}')
 
-# # # Задача 3. Сортировка
+# # Задача 3. Сортировка
 # print('Задача 3.')
 # N = int(input('Введите количество N чисел:'))
 # list = []
 # for n in range (N):
 #     list.append(int(input(f'Введите число {n + 1}: ')))
-# # list = [1,4,-3,0,10]
 # print('Изначальный список:', list)
 # for i in range (len(list)-1):
 #     for j in range (len(list)-1-i):
 #         if list[j] > list[j+1]:
 #             list[j], list[j+1] = list[j+1], list[j]
 # print('Отсортированный список:', list)
+
+# # Задача 4. Товары
+# print('Задача 4.')
+# goods={'Лампа': '12345','Стол': '23456','Диван': '34567','Стул': '45678',}
+# store = { '12345': [{'quantity': 27, 'price': 42},],
+#  '23456': [
+#  {'quantity': 22, 'price': 510},
+#  {'quantity': 32, 'price': 520},],
+#  '34567': [
+#  {'quantity': 2, 'price': 1200},
+#  {'quantity': 1, 'price': 1150},],
+#  '45678': [
+#  {'quantity': 50, 'price': 100},
+#  {'quantity': 12, 'price': 95},
+#  {'quantity': 43, 'price': 97},],}
+# for item_name in goods.keys():
+#     item_code = goods[item_name]
+#     total_quantity = 0
+#     total_cost = 0
+#     for entry in store[item_code]:
+#         total_quantity += entry['quantity']
+#         total_cost += entry['price'] * entry['quantity']
+#     print('{} - {} штук, стомимость {} рубля(ей).'.format(item_name, 
+#     total_quantity, total_cost))
