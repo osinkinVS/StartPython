@@ -42,18 +42,18 @@
 # else:
 #     print('Нельзя сделать палиндром')
 
-# Задача 3. Словарь синонимов
-print('Задача 3.')
-synonyms_dict = dict()
-par = int(input('Введите количество пар слов: '))
-for i in range(par):
-    first, second = input(f'{i +1} пара:').lower().split(' - ')
-    synonyms_dict[first] = second
-    synonyms_dict[second] = first
-while True:
-    word = input('введите слово: ').lower()
-    if word in synonyms_dict:
-        print('Синоним: ', synonyms_dict[word].capitalize())
-        break
-    else:
-        print('Такого слова в словаре нет.')
+# # Задача 3. Словарь синонимов
+# print('Задача 3.')
+# synonyms_dict = dict()
+# par = int(input('Введите количество пар слов: '))
+# for i in range(par):
+#     first, second = input(f'{i +1} пара:').lower().split(' - ')
+#     synonyms_dict[first] = second
+#     synonyms_dict[second] = first
+# while True:
+#     word = input('введите слово: ').lower()
+#     if word in synonyms_dict:
+#         print('Синоним: ', synonyms_dict[word].capitalize())
+#         break
+#     else:
+#         print('Такого слова в словаре нет.')
