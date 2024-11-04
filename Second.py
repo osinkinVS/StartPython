@@ -71,3 +71,31 @@
 #         total_cost += entry['price'] * entry['quantity']
 #     print('{} - {} штук, стомимость {} рубля(ей).'.format(item_name, 
 #     total_quantity, total_cost))
+
+# Задача 5. Товары
+print('Задача 5.')
+orders_count=int(input('Введите количество заказов:'))
+# Пустой слоарь о заказах
+database=dict()
+for i_order in range(orders_count):
+ customer,pizza_name,count=input('{}заказ:'.format(i_order+1)).split()
+# Преобразуем количество в целое число
+ count=int(count)
+# Если покупатель еще не добавлен в словарь
+ if customer not in database:
+# Добавляем покупателя и начальную запись о пицце
+    database[customer]={pizza_name:count}
+ else:
+# Если покупатель уже есть
+    if pizza_name in database[customer]:
+# Если пицца уже была заказана ранее,увеличиваем количество
+        database[customer][pizza_name] += count
+    else:
+# Если пицца новая для этого покупателя, добавляем запись
+        database[customer][pizza_name] = count
+# Сортируем список покупателей в алфавитном порядке и выводим информацию
+for customer in sorted(database.keys()):
+    print('{}:'.format(customer))
+# Сортируем пиццы по алфавиту и выводим информацию
+    for pizza_name in sorted(database[customer].keys()):
+        print('{}: {}'.format(pizza_name, database[customer][pizza_name]))
