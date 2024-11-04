@@ -24,3 +24,20 @@
 
 # set_new = set(array_1) - set(array_2) - set(array_3)
 # print('Решение со множеством: ', *set_new)
+
+# Задача 2. Палиндром
+print('Задача 2.')
+def is_poly(string):
+    char_dict = dict()
+    for i_sym in string:
+        char_dict[i_sym] = char_dict.get(i_sym, 0) + 1
+    odd_count = 0 
+    for i_value in char_dict.values():
+        if i_value % 2 != 0:
+            odd_count +=1
+    return odd_count <= 1 
+my_string = input('Введите строку: ')
+if is_poly(my_string):
+    print('Можно сделать палиндром')
+else:
+    print('Нельзя сделать палиндром')
