@@ -28,7 +28,7 @@
 # my_list = []
 # movie_check = int(input('Сколько фильмов вы хотите добавить? '))
 # for _ in range (movie_check):
-#     movie = (input('Введите название фильма: '))
+#     movie = (input('Введите название фильма: ')).lower()
 #     if movie in films:
 #         my_list.append(movie)
 #     else:
