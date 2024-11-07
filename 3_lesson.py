@@ -96,18 +96,33 @@
 
 # # Задача 3. Продвинутая функция сум
 # print('Задача 3.')
-def my_sum(*args):
-    total_sum = 0 # Инициализация переменной для хранения суммы
-    for i_elem in args:
-# Проверка, является ли элемент целым числом
-        if isinstance(i_elem, int):
-            total_sum += i_elem # Добавление числа к общей сумме
-# Проверка, является ли элемент списком или кортежем
-        elif isinstance(i_elem, (list, tuple)):
-# Рекурсивный вызов функции для суммирования элементов внутри списка или кортежа
-            for x in i_elem:
-                total_sum += my_sum(x)
-    return total_sum
-# Основной код для тестирования
-print(my_sum([[1, 2, [3]], [1], 3])) # Ожидаемый результат: 10
-print(my_sum(1, 2, 3, 4, 5)) # Ожидаемый результат: 15
+# def my_sum(*args):
+#     total_sum = 0 # Инициализация переменной для хранения суммы
+#     for i_elem in args:
+# # Проверка, является ли элемент целым числом
+#         if isinstance(i_elem, int):
+#             total_sum += i_elem # Добавление числа к общей сумме
+# # Проверка, является ли элемент списком или кортежем
+#         elif isinstance(i_elem, (list, tuple)):
+# # Рекурсивный вызов функции для суммирования элементов внутри списка или кортежа
+#             for x in i_elem:
+#                 total_sum += my_sum(x)
+#     return total_sum
+# # Основной код для тестирования
+# print(my_sum([[1, 2, [3]], [1], 3])) # Ожидаемый результат: 10
+# print(my_sum(1, 2, 3, 4, 5)) # Ожидаемый результат: 15
+
+# Задача 4. Список списков
+print('Задача 4.')
+def flatten(a_list):
+    result = []
+    for a in a_list:
+        if isinstance(a,int):
+            result.append
+        else:
+            result.extend(flatten(a))
+    return result
+nice_list = [1, 2, [3, 4], [[5, 6, 7], [8, 9, 10]], [[11, 12, 13],
+[14, 15], [16, 17, 18]]]
+flattened_list = flatten(nice_list)
+print(flattened_list)
