@@ -31,7 +31,7 @@ def print_data():
         j = 0
         for i in range(len(data_first)):
             if data_first[i] == '\n' or i == len(data_first) - 1:
-                data_first_list(''.join(data_first[j:i+1]))
+                data_first_list.append(''.join(data_first[j:i+1]))
                 j = i
         print(''.join(data_first_list))
 
