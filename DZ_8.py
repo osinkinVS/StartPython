@@ -57,3 +57,48 @@
 
 # # Задача 4. Частотный анализ
 # print('Задача 4.')
+# english_alphabet = 'abcdefghijklmnopqrstuvwxyz'
+# total_letters = 0
+# # Открываем файл text.txt и считываем текст
+# with open("text.txt", "r") as file:
+#     text = file.read().lower() # Приводим текст к нижнему регистру
+# # Создаем словарь для подсчета количества каждой буквы
+# letter_count = {letter: 0 for letter in english_alphabet}
+# # Подсчитываем количество вхождений каждой буквы
+# for char in text:
+#     if char in english_alphabet:
+#         letter_count[char] += 1
+#         total_letters += 1
+# # Вычисляем частоту встречаемости каждой буквы
+# letter_freq = {letter: (count / total_letters) for letter, count in
+# letter_count.items() if count > 0}
+# # Сортируем буквы по убыванию частоты и по алфавиту при равенстве частоты
+# sorted_letters = sorted(letter_freq.items(), key=lambda x: (-x[1], x[0]))
+# # Записываем результат в файл analysis.txt
+# with open("analysis.txt", "w") as file:
+#     for letter, freq in sorted_letters:
+#         file.write(f"{letter} {freq:.3f}\n")
+
+import zipfile
+# Открываем архив и ищем текстовый файл
+with zipfile.ZipFile("voina-i-mir.zip", "r") as zip_ref:
+# Получаем список файлов в архиве и выбираем первый текстовый файл
+    file_name = [name for name in zip_ref.namelist() if name.endswith('.txt')][0]
+# Открываем выбранный файл и читаем его содержимое
+    with zip_ref.open(file_name) as file:
+        text = file.read().decode('utf-8')
+# Инициализируем словарь для подсчета количества символов
+char_count = {}
+# Подсчитываем количество вхождений каждого символа
+for char in text:
+    if char.isalpha(): # Учитываем только буквы
+        if char in char_count:
+            char_count[char] += 1
+        else:
+            char_count[char] = 1
+# Сортируем символы по частоте (в убывании) и по алфавиту при равенстве частоты
+sorted_chars = sorted(char_count.items(), key=lambda x: (-x[1], x[0]))
+# Записываем результаты в файл
+with open("statistik.txt", "w", encoding="utf-8") as file:
+    for char, freq in sorted_chars:
+        file.write(f"{char}: {freq}\n")
